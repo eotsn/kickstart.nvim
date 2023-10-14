@@ -258,6 +258,9 @@ require('lazy').setup({
 vim.opt.list = true
 vim.opt.listchars:append({ tab = '»·', space = '·' })
 
+-- Show a few lines of context around the cursor
+vim.o.scrolloff = 8
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
