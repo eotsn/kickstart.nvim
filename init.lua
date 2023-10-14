@@ -255,6 +255,9 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+vim.opt.list = true
+vim.opt.listchars:append({ tab = '»·', space = '·' })
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
