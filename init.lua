@@ -143,20 +143,16 @@ require('lazy').setup({
   },
 
   {
-    -- A clean theme that celebrates the lights of Downtown Tokyo at night
-    'folke/tokyonight.nvim',
+    'mcchrish/zenbones.nvim',
+    dependencies = {
+      'rktjmp/lush.nvim'
+    },
     priority = 1000,
     config = function()
-      require("tokyonight").setup({
-        style = "night",
-        transparent = true,
-        styles = { floats = "transparent" },
-        on_highlights = function(hl, c)
-          hl.Whitespace = { fg = c.bg_highlight }
-          hl.CursorLineNr = { fg = c.blue }
-        end,
-      })
-      vim.cmd.colorscheme 'tokyonight'
+      vim.g.zenbones_lighten_non_text = 5
+      vim.g.zenbones_transparent_background = true
+      vim.o.termguicolors = true
+      vim.cmd.colorscheme 'zenbones'
     end,
   },
 
@@ -167,7 +163,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'zenbones',
         component_separators = '|',
         section_separators = '',
       },
