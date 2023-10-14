@@ -143,11 +143,20 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    -- A clean theme that celebrates the lights of Downtown Tokyo at night
+    'folke/tokyonight.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require("tokyonight").setup({
+        style = "night",
+        transparent = true,
+        styles = { floats = "transparent" },
+        on_highlights = function(hl, c)
+          hl.Whitespace = { fg = c.bg_highlight }
+          hl.CursorLineNr = { fg = c.blue }
+        end,
+      })
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
@@ -158,7 +167,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'tokyonight',
         component_separators = '|',
         section_separators = '',
       },
