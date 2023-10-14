@@ -233,6 +233,8 @@ require('lazy').setup({
     end,
   },
 
+  { "folke/zen-mode.nvim", opts = {} },
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.
@@ -299,6 +301,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+vim.keymap.set('n', '<leader>zm', require('zen-mode').toggle, { desc = 'Toggle [Z]en [M]ode' })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
